@@ -1,3 +1,58 @@
-[gd_scene format=2]
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/screen/Game.gd" type="Script" id=1]
+[ext_resource path="res://src/Star.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/tiles/GrassTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/sounds/bgm/happy_0.ogg" type="AudioStream" id=4]
+[ext_resource path="res://src/Player.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6895.17, 19.5598 )
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 692.821, 414.538, 0, 0, 0, 0, 1253.49, 282.682, 0, 0, 0, 0, 2117.78, 144.576, 0, 0, 0, 0, 1372.04, -163.239, 0, 0, 0, 0, 983.309, -158.479, 0, 0, 0, 0, 448.6, -425.04, 0, 0, 0, 0, 42.411, -548.801, 0, 0, 0, 0, 594.574, -821.708, 0, 0, 0, 0, 1011.87, -1042.26, 0, 0, 0, 0, 1329.2, -1056.54, 0, 0, 0, 0, 1730.63, -1059.71, 0, 0, 0, 0, 1948.01, -1205.68, 0, 0, 0, 0, 1027.71, 572.347, 0, 0, 0, 0, 1800.6, 569.829, 0, 0, 0, 0, 2258.79, 549.689, 0, 0, 0, 0, 692.821, 414.538 )
+}
 
 [node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+Star = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -996.0
+margin_top = -2399.0
+margin_right = 5668.0
+margin_bottom = 1616.0
+color = Color( 0.258824, 0.72549, 0.952941, 1 )
+
+[node name="Map" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 70, 70 )
+format = 1
+tile_data = PoolIntArray( -917490, 7, 0, -917486, 3, 0, -917485, 18, 0, -917484, 18, 0, -917483, 18, 0, -917482, 18, 0, -917481, 18, 0, -917480, 18, 0, -917479, 5, 0, -851957, 7, 0, -720888, 7, 0, -589819, 7, 0, -458752, 8, 0, -458751, 9, 0, -458750, 10, 0, -393212, 7, 0, -327674, 7, 0, -262136, 7, 0, -196598, 7, 0, -65524, 3, 0, -65523, 18, 0, -65522, 18, 0, -65521, 18, 0, -65520, 18, 0, -65519, 18, 0, -65518, 18, 0, -65517, 18, 0, -65516, 5, 0, 0, 720915, 0, 23, 7, 0, 65563, 7, 0, 196632, 3, 0, 196633, 18, 0, 196634, 18, 0, 196635, 18, 0, 196636, 18, 0, 196637, 18, 0, 196638, 5, 0, 327695, 3, 0, 327696, 18, 0, 327697, 18, 0, 327698, 18, 0, 327699, 18, 0, 327700, 5, 0, 458759, 3, 0, 458760, 18, 0, 458761, 18, 0, 458762, 18, 0, 458763, 18, 0, 458764, 5, 0, 720894, 18, 0, 720895, 18, 0, 655360, 18, 0, 655361, 18, 0, 655362, 18, 0, 655363, 18, 0, 655364, 18, 0, 655365, 18, 0, 655366, 18, 0, 655367, 18, 0, 655368, 18, 0, 655369, 18, 0, 655370, 18, 0, 655371, 18, 0, 655372, 18, 0, 655373, 18, 0, 655374, 18, 0, 655375, 18, 0, 655376, 18, 0, 655377, 18, 0, 655378, 18, 0, 655379, 18, 0, 655380, 18, 0, 655381, 18, 0, 655382, 18, 0, 655383, 18, 0, 655384, 18, 0, 655385, 18, 0, 655386, 18, 0, 655387, 18, 0, 655388, 18, 0, 655389, 18, 0, 655390, 18, 0, 655391, 18, 0, 655392, 18, 0, 655393, 18, 0, 786430, 1, 0, 786431, 1, 0, 720896, 1, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720906, 1, 0, 720907, 1, 0, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 720912, 1, 0, 720913, 1, 0, 720914, 1, 0, 720915, 1, 0, 720916, 1, 0, 720917, 1, 0, 720918, 1, 0, 720919, 1, 0, 720920, 1, 0, 720921, 1, 0, 720922, 1, 0, 720923, 1, 0, 720924, 1, 0, 720925, 1, 0, 720926, 1, 0, 720927, 1, 0, 720928, 1, 0, 720929, 1, 0 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="FallLimit" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 323.101, 1584.52 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallLimit"]
+position = Vector2( 797.119, -58.5638 )
+shape = SubResource( 1 )
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2( 58.1203, 640.121 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 61.2856, 616.462 )
+
+[node name="StarSpawnPath" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="StarSpawnLocation" type="PathFollow2D" parent="StarSpawnPath"]
+position = Vector2( 692.821, 414.538 )
+rotation = -0.230981
+
+[node name="StarWrapper" type="Node2D" parent="."]
